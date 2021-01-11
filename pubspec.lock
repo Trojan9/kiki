@@ -93,6 +93,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.99"
+  smooth_scroll_web:
+    dependency: transitive
+    description:
+      name: smooth_scroll_web
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.4"
   source_span:
     dependency: transitive
     description:
@@ -149,5 +156,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.0-nullsafety.3"
+  webscrollbar:
+    dependency: "direct main"
+    description:
+      name: webscrollbar
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.2"
 sdks:
   dart: ">=2.10.0-110 <2.11.0"
+  flutter: ">=1.17.0 <2.0.0"
