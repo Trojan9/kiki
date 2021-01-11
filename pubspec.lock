@@ -15,6 +15,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.0-nullsafety.1"
+  carousel_slider:
+    dependency: "direct main"
+    description:
+      name: carousel_slider
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.3.1"
   characters:
     dependency: transitive
     description:
@@ -94,7 +101,7 @@ packages:
     source: sdk
     version: "0.0.99"
   smooth_scroll_web:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: smooth_scroll_web
       url: "https://pub.dartlang.org"

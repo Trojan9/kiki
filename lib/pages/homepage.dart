@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:kiki/productlist.dart';
@@ -5,6 +6,10 @@ import 'package:webscrollbar/webscrollbar.dart';
 
 const int DEFAULT_SCROLL_SPEED = 130;
 const int DEFAULT_NORMAL_SCROLL_ANIMATION_LENGTH_MS = 250;
+final List<String> images = [
+  'assets/banner3.jpg',
+  'assets/banner4.jpg',
+];
 
 class Homepage extends StatefulWidget {
   @override
@@ -14,6 +19,7 @@ class Homepage extends StatefulWidget {
 class _HomepageState extends State<Homepage> {
   ScrollController controller = ScrollController();
   final int scrollSpeed = DEFAULT_SCROLL_SPEED;
+  final CarouselController _controllercontrol = CarouselController();
 
   final Curve curve = Curves.linear;
   final int scrollAnimationLength = DEFAULT_NORMAL_SCROLL_ANIMATION_LENGTH_MS;
@@ -73,7 +79,7 @@ class _HomepageState extends State<Homepage> {
         color: Colors.red,
         child: WebScrollBar(
           controller: controller,
-          visibleHeight: MediaQuery.of(context).size.height,
+          visibleHeight: 50,
           child: Scaffold(
             appBar: CustomAppBar(),
             body: SingleChildScrollView(
@@ -112,7 +118,7 @@ class _HomepageState extends State<Homepage> {
                             borderRadius: BorderRadius.circular(18),
                           ),
                           child: Image.asset(
-                            "banner.png",
+                            "assets/banner.png",
                             height: MediaQuery.of(context).size.height / 1.5,
                             // width: MediaQuery.of(context).size.width,
                           )),
@@ -147,7 +153,68 @@ class _HomepageState extends State<Homepage> {
                               scrollDirection: Axis.vertical,
                               childAspectRatio: (2 / 2),
                               children: List.generate(
-                                12,
+                                6,
+                                (index) {
+                                  return Listproducts();
+                                },
+                              ))
+                        ],
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(top: 20),
+                      height: MediaQuery.of(context).size.height / 3,
+                      width: MediaQuery.of(context).size.width,
+                      child: CarouselSlider.builder(
+                          itemCount: images.length,
+                          carouselController: _controllercontrol,
+                          options: CarouselOptions(
+                            autoPlay: true,
+                            aspectRatio: 2.0,
+                            enlargeCenterPage: true,
+                            viewportFraction: 1.0,
+                          ),
+                          itemBuilder: (context, index) {
+                            return Container(
+                                child: Center(
+                                    child: Image.asset(images[index],
+                                        // fit: BoxFit.fill,
+                                        width: MediaQuery.of(context)
+                                            .size
+                                            .width)));
+                          }),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(
+                          left: MediaQuery.of(context).size.width / 8,
+                          right: MediaQuery.of(context).size.width / 8,
+                          top: 20),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Align(
+                            alignment: Alignment.topLeft,
+                            child: Text("NEW ARRIVAL",
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.bold,
+                                )),
+                          ),
+                          SizedBox(
+                            height: MediaQuery.of(context).size.height / 10,
+                          ),
+                          GridView.count(
+                              crossAxisCount: 3,
+                              //scrollDirection: Axis.vertical,
+                              //itemCount: newdesignreadywearlist.length,
+                              primary: false,
+                              shrinkWrap: true,
+                              physics: NeverScrollableScrollPhysics(),
+                              scrollDirection: Axis.vertical,
+                              childAspectRatio: (2 / 2),
+                              children: List.generate(
+                                6,
                                 (index) {
                                   return Listproducts();
                                 },
@@ -221,23 +288,23 @@ class _CustomAppBarState extends State<CustomAppBar> {
                 children: [
                   Text(
                     "CAMERA",
-                    style: TextStyle(color: Colors.black, fontSize: 18),
+                    style: TextStyle(color: Colors.black, fontSize: 15),
                   ),
                   Text(
                     "ACCESSORIES",
-                    style: TextStyle(color: Colors.black, fontSize: 18),
+                    style: TextStyle(color: Colors.black, fontSize: 15),
                   ),
                   Text(
                     "SHOES",
-                    style: TextStyle(color: Colors.black, fontSize: 18),
+                    style: TextStyle(color: Colors.black, fontSize: 15),
                   ),
                   Text(
                     "WRISTWATCHES",
-                    style: TextStyle(color: Colors.black, fontSize: 18),
+                    style: TextStyle(color: Colors.black, fontSize: 15),
                   ),
                   Text(
                     "PERFUMES",
-                    style: TextStyle(color: Colors.black, fontSize: 18),
+                    style: TextStyle(color: Colors.black, fontSize: 15),
                   ),
                 ],
               ),
@@ -255,7 +322,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
                       ),
                       Text(
                         "Account",
-                        style: TextStyle(color: Colors.black, fontSize: 18),
+                        style: TextStyle(color: Colors.black, fontSize: 15),
                       )
                     ],
                   ),
