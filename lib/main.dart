@@ -11,6 +11,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'kikimayana.com',
+      initialRoute: "/",
+      routes: {
+        '/': (context) => Homepage(),
+      },
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -27,7 +31,7 @@ class MyApp extends StatelessWidget {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: Homepage(),
+      // home: Homepage(),
     );
   }
 }
