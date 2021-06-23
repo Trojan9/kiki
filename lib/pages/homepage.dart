@@ -276,7 +276,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
             Expanded(
               flex: 1,
               child: Image.asset(
-                "you1.png",
+                "assets/you1.png",
                 width: 50,
                 height: 50,
               ),

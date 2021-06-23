@@ -98,7 +98,7 @@ class _ItemdetailsState extends State<Itemdetails> {
   Widget productpics() {
     return Container(
       width: MediaQuery.of(context).size.width / 2,
-      child: Image.asset("product.jpg"),
+      child: Image.asset("assets/product.jpg"),
     );
   }
 }
@@ -130,7 +130,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
             Expanded(
               flex: 1,
               child: Image.asset(
-                "you1.png",
+                "assets/you1.png",
                 width: 50,
                 height: 50,
               ),
