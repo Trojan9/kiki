@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kiki/pages/homepage.dart';
+import 'package:kiki/pages/itemdetails.dart';
 
 void main() {
   runApp(MyApp());
