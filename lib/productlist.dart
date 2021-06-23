@@ -19,7 +19,7 @@ class _ListproductsState extends State<Listproducts> {
             Expanded(
               flex: 4,
               child: Image.asset(
-                "product.jpg",
+                "assets/product.jpg",
                 height: MediaQuery.of(context).size.height / 2,
               ),
             ),
